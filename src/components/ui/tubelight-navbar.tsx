@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import type { LucideIcon } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
@@ -18,7 +19,7 @@ type NavBarProps = {
 };
 
 export const NavBar = ({ items, className }: NavBarProps) => {
-  const [activeTab, setActiveTab] = useState(items[0].name);
+  const pathname = usePathname();
   const [_isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -41,13 +42,14 @@ export const NavBar = ({ items, className }: NavBarProps) => {
       <div className="flex items-center gap-3 bg-background/5 border border-border backdrop-blur-lg py-1 px-1 rounded-full shadow-lg">
         {items.map((item) => {
           const Icon = item.icon;
-          const isActive = activeTab === item.name;
+          // Home("/")は完全一致、その他は前方一致でアクティブ判定
+          const isActive =
+            item.url === "/" ? pathname === "/" : pathname.startsWith(item.url);
 
           return (
             <Link
               key={item.name}
               href={item.url}
-              onClick={() => setActiveTab(item.name)}
               className={cn(
                 "relative cursor-pointer text-sm font-semibold px-6 py-2 rounded-full transition-colors",
                 "text-foreground/80 hover:text-primary",
@@ -60,9 +62,11 @@ export const NavBar = ({ items, className }: NavBarProps) => {
               </span>
               {isActive && (
                 <motion.div
-                  layoutId="lamp"
+                  // layoutId="lamp" // 削除: ページ遷移時の座標飛びバグ回避のため
                   className="absolute inset-0 w-full bg-primary/5 rounded-full -z-10"
-                  initial={false}
+                  initial={{ opacity: 0, scale: 0.8 }} // 変更: フェードイン開始状態
+                  animate={{ opacity: 1, scale: 1 }} // 変更: フェードイン完了状態
+                  exit={{ opacity: 0, scale: 0.8 }} // 追加: フェードアウト（AnimatePresenceがないので即消えるが、念のため定義）
                   transition={{
                     type: "spring",
                     stiffness: 300,

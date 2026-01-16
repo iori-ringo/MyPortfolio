@@ -18,8 +18,8 @@ const WorksPage = () => {
           {/* マスコット（Think） */}
           <Mascot
             src="/images/mascot/think.png"
-            width={160}
-            height={160}
+            width={230}
+            height={230}
             animation="float"
             containerClassName="order-1 md:order-2 -ml-0 md:-ml-2 mt-0 md:mt-2"
           />
