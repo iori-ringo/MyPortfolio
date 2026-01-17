@@ -58,6 +58,7 @@ export const BalloonBackground = () => {
     let particles: Particle[] = [];
     const mouse = { x: -2000, y: -2000 };
     const balloonCount = 20;
+    let animationFrameId: number;
 
     // パーティクル作成関数
     const createParticle = (x: number, y: number, color: string): Particle => {
@@ -256,6 +257,12 @@ export const BalloonBackground = () => {
 
     // アニメーションループ
     const animate = () => {
+      // 視差効果軽減設定のチェック
+      const isReduced = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
+      if (isReduced) return;
+
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       particles = particles.filter((p) => p.opacity > 0);
@@ -268,7 +275,7 @@ export const BalloonBackground = () => {
         b.update();
       }
 
-      requestAnimationFrame(animate);
+      animationFrameId = requestAnimationFrame(animate);
     };
 
     const onMouseMove = (e: MouseEvent) => {
@@ -285,6 +292,7 @@ export const BalloonBackground = () => {
     return () => {
       window.removeEventListener("resize", resize);
       window.removeEventListener("mousemove", onMouseMove);
+      cancelAnimationFrame(animationFrameId);
     };
   }, []);
 
