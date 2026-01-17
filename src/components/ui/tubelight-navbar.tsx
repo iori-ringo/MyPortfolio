@@ -62,8 +62,11 @@ export const NavBar = ({ items, className }: NavBarProps) => {
               </span>
               {isActive && (
                 <motion.div
-                  layoutId="lamp"
+                  // layoutId="lamp" // 削除: ページ遷移時の座標飛びバグ回避のため
                   className="absolute inset-0 w-full bg-primary/5 rounded-full -z-10"
+                  initial={{ opacity: 0, scale: 0.8 }} // 変更: フェードイン開始状態
+                  animate={{ opacity: 1, scale: 1 }} // 変更: フェードイン完了状態
+                  exit={{ opacity: 0, scale: 0.8 }} // 追加: フェードアウト（AnimatePresenceがないので即消えるが、念のため定義）
                   transition={{
                     type: "spring",
                     stiffness: 300,
