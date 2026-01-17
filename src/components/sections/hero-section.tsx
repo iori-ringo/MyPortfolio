@@ -17,7 +17,7 @@ export const HeroSection = () => {
         <div className="relative w-full max-w-2xl mx-auto">
           {/* マスコット（Hello）: PC配置 タイトルの左上 */}
           <Mascot
-            src="/images/mascot/hello.png"
+            src="/images/mascot/mascot_cheer_black.png"
             // サイズアップ: 220 -> 280
             width={300}
             height={300}
@@ -30,7 +30,7 @@ export const HeroSection = () => {
           {/* SP配置: 中央上部 */}
           <div className="md:hidden flex justify-center pb-4 mb-2">
             <Mascot
-              src="/images/mascot/hello.png"
+              src="/images/mascot/mascot_cheer_black.png"
               // SPサイズアップ: 160 -> 200
               width={200}
               height={200}

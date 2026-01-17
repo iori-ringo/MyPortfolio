@@ -1,6 +1,7 @@
-import { Mascot } from "@/components/ui/mascot";
+import { AnimatedTitle } from "@/components/ui/animated-title";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Mascot } from "@/components/ui/mascot";
 import { profile } from "@/data/profile";
 import { skillCategories } from "@/data/skills";
 
@@ -15,9 +16,24 @@ const AboutPage = () => {
     <div className="min-h-screen pt-24 pb-20">
       <div className="container mx-auto px-4 max-w-4xl">
         {/* ヘッダー */}
-        <header className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">About</h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+        <header className="mb-16">
+          <div className="flex flex-col md:flex-row justify-center items-center gap-8 mb-6">
+            {/* マスコット（Hello）: 左側 (SPは上) */}
+            <Mascot
+              src="/images/mascot/hello.png"
+              width={250}
+              height={250}
+              animation="bounce"
+              containerClassName="order-1"
+            />
+
+            {/* タイトル: 右側 (SPは下) */}
+            <AnimatedTitle className="text-4xl md:text-5xl font-bold order-2 md:-ml-16">
+              About me
+            </AnimatedTitle>
+          </div>
+
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-center">
             {profile.tagline}
           </p>
         </header>

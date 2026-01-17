@@ -7,7 +7,7 @@ import { paths } from "@/core/paths";
 const navItems = [
   { name: "Home", url: paths.home.getHref(), icon: Home },
   { name: "Works", url: paths.works.getHref(), icon: Briefcase },
-  { name: "About", url: paths.about.getHref(), icon: User },
+  { name: "About me", url: paths.about.getHref(), icon: User },
   { name: "Contact", url: paths.contact.getHref(), icon: Mail },
 ];
 

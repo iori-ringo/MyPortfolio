@@ -1,3 +1,4 @@
+import { AnimatedTitle } from "@/components/ui/animated-title";
 import { Mascot } from "@/components/ui/mascot";
 import { WorkCard } from "@/components/works/work-card";
 import { works } from "@/data/works";
@@ -12,9 +13,9 @@ const WorksPage = () => {
     <div className="min-h-screen pt-24 pb-20">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-center items-center gap-4 mb-6">
-          <h1 className="text-4xl md:text-5xl font-bold text-center order-2 md:order-1">
+          <AnimatedTitle className="text-4xl md:text-5xl font-bold text-center order-2 md:order-1">
             Works
-          </h1>
+          </AnimatedTitle>
           {/* マスコット（Think） */}
           <Mascot
             src="/images/mascot/think.png"

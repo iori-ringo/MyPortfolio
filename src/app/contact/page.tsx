@@ -1,6 +1,6 @@
-import { Mascot } from "@/components/ui/mascot";
 import { Github, Linkedin, Mail, Twitter } from "lucide-react";
 import { Card, CardHeader, CardTitle } from "@/components/ui/card";
+import { Mascot } from "@/components/ui/mascot";
 import { profile } from "@/data/profile";
 
 export const metadata = {
