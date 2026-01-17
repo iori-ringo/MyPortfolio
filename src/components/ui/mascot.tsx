@@ -5,7 +5,7 @@ import type {
   Transition,
   VariantLabels,
 } from "framer-motion";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 
@@ -97,13 +97,18 @@ export const Mascot = ({
   animation = "none",
   delay = 0,
 }: MascotProps) => {
+  const shouldReduceMotion = useReducedMotion();
   const animationConfig = getAnimationConfig(animation, delay);
+
+  // 視差効果軽減設定が有効な場合はアニメーションを無効化
+  const finalAnimate = shouldReduceMotion ? {} : animationConfig.animate;
+  const finalInitial = shouldReduceMotion ? {} : animationConfig.initial;
 
   return (
     <motion.div
       className={cn("relative inline-block", containerClassName)}
-      initial={animationConfig.initial}
-      animate={animationConfig.animate}
+      initial={finalInitial}
+      animate={finalAnimate}
       transition={animationConfig.transition}
       whileHover={{ scale: 1.1, rotate: 5, transition: { duration: 0.2 } }}
     >

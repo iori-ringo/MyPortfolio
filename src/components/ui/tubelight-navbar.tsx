@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import type { LucideIcon } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+
 import { cn } from "@/lib/utils";
 
 type NavItem = {
@@ -20,17 +20,6 @@ type NavBarProps = {
 
 export const NavBar = ({ items, className }: NavBarProps) => {
   const pathname = usePathname();
-  const [_isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   return (
     <div
