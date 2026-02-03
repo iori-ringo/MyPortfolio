@@ -18,9 +18,9 @@ export const profile = {
     "TypeScript",
     "Tailwind CSS",
     "shadcn/ui",
-    "Zod",
-    "React Hook Form",
     "Figma",
+    "Claude Code",
+    "Cursor",
   ],
   // ソーシャルリンク
   social: {
