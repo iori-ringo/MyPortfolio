@@ -12,7 +12,6 @@ import {
 } from "@/components/ui/card";
 import { paths } from "@/core/paths";
 import { works } from "@/data/works";
-import { cn } from "@/lib/utils";
 
 export const FeaturedWorksSection = () => {
   return (
