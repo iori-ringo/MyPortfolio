@@ -1,44 +1,10 @@
-import { Mail } from "lucide-react";
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { Card, CardHeader, CardTitle } from "@/components/ui/card";
 import { Mascot } from "@/components/ui/mascot";
-import { contactLinks } from "@/data/contact";
+import { contactIcons, contactLinks } from "@/data/contact";
 import { pageMetadata } from "@/data/metadata";
-import { profile } from "@/data/profile";
+import { getContactDescription, getContactUrl } from "@/lib/social-utils";
 
 export const metadata = pageMetadata.contact;
-
-// アイコンマッピング
-const iconMap = {
-  Github: FaGithub,
-  Mail,
-  Linkedin: FaLinkedin,
-  Twitter: FaTwitter,
-} as const;
-
-// profile.social からURLを取得するヘルパー関数
-const getContactUrl = (type: string): string => {
-  switch (type) {
-    case "github":
-      return profile.social.github;
-    case "email":
-      return `mailto:${profile.social.email}`;
-    case "linkedin":
-      return profile.social.linkedin;
-    case "x":
-      return profile.social.x;
-    default:
-      return "";
-  }
-};
-
-// description の取得（email の場合は動的に設定）
-const getDescription = (type: string, description: string): string => {
-  if (type === "email") {
-    return profile.social.email;
-  }
-  return description;
-};
 
 const ContactPage = () => {
   return (
@@ -55,19 +21,23 @@ const ContactPage = () => {
         {/* コンタクトリンク */}
         <div className="space-y-4 mb-16">
           {contactLinks.map((link) => {
-            const Icon = iconMap[link.iconName];
+            const Icon = contactIcons[link.iconName];
             const url = getContactUrl(link.type);
-            const description = getDescription(link.type, link.description);
-            // mailto リンクは target="_blank" を使用しない
+            const description = getContactDescription(
+              link.type,
+              link.description,
+            );
             const isEmail = link.type === "email";
 
             return (
               <a
                 key={link.name}
                 href={url}
-                target={isEmail ? undefined : "_blank"}
-                rel={isEmail ? undefined : "noopener noreferrer"}
                 className="block"
+                {...(!isEmail && {
+                  target: "_blank",
+                  rel: "noopener noreferrer",
+                })}
               >
                 <Card className="hover:shadow-lg transition-shadow cursor-pointer">
                   <CardHeader className="flex flex-row items-center gap-4">
