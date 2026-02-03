@@ -41,6 +41,6 @@ export const skillCategories: SkillCategory[] = [
   },
   {
     name: "AI活用",
-    skills: ["ChatGPT", "Cursor", "Antigravity", "Codex"],
+    skills: ["ChatGPT", "Cursor", "Antigravity", "Codex", "Claude Code"],
   },
 ];

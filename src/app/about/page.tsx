@@ -2,14 +2,12 @@ import { AnimatedTitle } from "@/components/ui/animated-title";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Mascot } from "@/components/ui/mascot";
+import { interests, values } from "@/data/about";
+import { pageMetadata } from "@/data/metadata";
 import { profile } from "@/data/profile";
 import { skillCategories } from "@/data/skills";
 
-export const metadata = {
-  title: "About | 清宮 伊織",
-  description:
-    "スキル、興味領域、価値観について。React/Next.js を中心としたフロントエンド開発が専門です。",
-};
+export const metadata = pageMetadata.about;
 
 const AboutPage = () => {
   return (
@@ -77,37 +75,16 @@ const AboutPage = () => {
             />
           </div>
           <div className="space-y-6">
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">可読性を重視</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                  コードは書く時間より読む時間の方が長い。誰が見ても理解しやすいコードを心がけています。
-                </p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">型安全な設計</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                  TypeScript と Zod
-                  を活用し、実行時エラーを未然に防ぐ堅牢な設計を追求しています。
-                </p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">ユーザー体験優先</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                  技術的な美しさよりも、実際に使う人にとって価値のある体験を優先しています。
-                </p>
-              </CardContent>
-            </Card>
+            {values.map((value) => (
+              <Card key={value.title}>
+                <CardHeader>
+                  <CardTitle className="text-lg">{value.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">{value.description}</p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </section>
 
@@ -115,14 +92,7 @@ const AboutPage = () => {
         <section>
           <h2 className="text-2xl font-bold mb-8">Interests</h2>
           <div className="flex flex-wrap gap-3">
-            {[
-              "UI/UX デザイン",
-              "パフォーマンス最適化",
-              "データ可視化",
-              "AI/機械学習",
-              "アクセシビリティ",
-              "デザインシステム",
-            ].map((interest) => (
+            {interests.map((interest) => (
               <Badge
                 key={interest}
                 variant="outline"

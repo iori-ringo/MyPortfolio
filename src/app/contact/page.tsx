@@ -1,40 +1,43 @@
 import { Github, Linkedin, Mail, Twitter } from "lucide-react";
 import { Card, CardHeader, CardTitle } from "@/components/ui/card";
 import { Mascot } from "@/components/ui/mascot";
+import { contactLinks } from "@/data/contact";
+import { pageMetadata } from "@/data/metadata";
 import { profile } from "@/data/profile";
 
-export const metadata = {
-  title: "Contact | 清宮 伊織",
-  description:
-    "お気軽にご連絡ください。GitHub, Email, LinkedIn, X からコンタクトできます。",
+export const metadata = pageMetadata.contact;
+
+// アイコンマッピング
+const iconMap = {
+  Github,
+  Mail,
+  Linkedin,
+  Twitter,
+} as const;
+
+// profile.social からURLを取得するヘルパー関数
+const getContactUrl = (type: string): string => {
+  switch (type) {
+    case "github":
+      return profile.social.github;
+    case "email":
+      return `mailto:${profile.social.email}`;
+    case "linkedin":
+      return profile.social.linkedin;
+    case "x":
+      return profile.social.x;
+    default:
+      return "";
+  }
 };
 
-const contactLinks = [
-  {
-    name: "GitHub",
-    url: profile.social.github,
-    icon: Github,
-    description: "コードやプロジェクトを確認できます",
-  },
-  {
-    name: "Email",
-    url: `mailto:${profile.social.email}`,
-    icon: Mail,
-    description: profile.social.email,
-  },
-  {
-    name: "LinkedIn",
-    url: profile.social.linkedin,
-    icon: Linkedin,
-    description: "プロフェッショナルなつながり",
-  },
-  {
-    name: "X (Twitter)",
-    url: profile.social.x,
-    icon: Twitter,
-    description: "日々のつぶやきや技術情報",
-  },
-];
+// description の取得（email の場合は動的に設定）
+const getDescription = (type: string, description: string): string => {
+  if (type === "email") {
+    return profile.social.email;
+  }
+  return description;
+};
 
 const ContactPage = () => {
   return (
@@ -51,14 +54,17 @@ const ContactPage = () => {
         {/* コンタクトリンク */}
         <div className="space-y-4 mb-16">
           {contactLinks.map((link) => {
-            const Icon = link.icon;
+            const Icon = iconMap[link.iconName];
+            const url = getContactUrl(link.type);
+            const description = getDescription(link.type, link.description);
+
             return (
               <Card
                 key={link.name}
                 className="hover:shadow-lg transition-shadow"
               >
                 <a
-                  href={link.url}
+                  href={url}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block"
@@ -70,7 +76,7 @@ const ContactPage = () => {
                     <div className="flex-1">
                       <CardTitle className="text-lg">{link.name}</CardTitle>
                       <p className="text-sm text-muted-foreground">
-                        {link.description}
+                        {description}
                       </p>
                     </div>
                   </CardHeader>
