@@ -1,15 +1,15 @@
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
-import { Badge } from "@/components/ui/badge";
-import { buttonVariants } from "@/components/ui/button";
+import { Badge } from "@/components/shadcn/badge";
+import { buttonVariants } from "@/components/shadcn/button";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
+} from "@/components/shadcn/card";
 import { paths } from "@/core/paths";
 import { works } from "@/data/works";
 

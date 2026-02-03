@@ -1,6 +1,6 @@
 import { FileText, Mail } from "lucide-react";
 import Link from "next/link";
-import { buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/shadcn/button";
 import { Mascot } from "@/components/ui/mascot";
 import { paths } from "@/core/paths";
 import { cn } from "@/lib/utils";

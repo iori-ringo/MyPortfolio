@@ -1,6 +1,11 @@
+import { Badge } from "@/components/shadcn/badge";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "@/components/shadcn/card";
 import { AnimatedTitle } from "@/components/ui/animated-title";
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Mascot } from "@/components/ui/mascot";
 import { interests, values } from "@/data/about";
 import { pageMetadata } from "@/data/metadata";

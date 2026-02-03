@@ -1,4 +1,4 @@
-import { Card, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardHeader, CardTitle } from "@/components/shadcn/card";
 import { Mascot } from "@/components/ui/mascot";
 import { contactIcons, contactLinks } from "@/data/contact";
 import { pageMetadata } from "@/data/metadata";

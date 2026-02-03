@@ -3,8 +3,8 @@
 import { FileText } from "lucide-react";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
-import { Badge } from "@/components/ui/badge";
-import { buttonVariants } from "@/components/ui/button";
+import { Badge } from "@/components/shadcn/badge";
+import { buttonVariants } from "@/components/shadcn/button";
 import { Mascot } from "@/components/ui/mascot";
 import { Typewriter } from "@/components/ui/typewriter";
 import { paths } from "@/core/paths";

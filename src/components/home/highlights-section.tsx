@@ -1,5 +1,5 @@
 import { Palette, Shield, Sparkles } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/shadcn/card";
 import { highlights } from "@/data/works";
 
 const iconMap = {
