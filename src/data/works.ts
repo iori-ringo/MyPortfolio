@@ -35,14 +35,15 @@ export const works: Work[] = [
     github: "https://github.com/iori-ringo/memo_app",
     role: "個人開発",
     highlight: "Electron × Next.js の統合開発",
-    problem: "macOS 標準のメモアプリでは物足りない機能があった",
+    problem: "Appleの標準のメモアプリでは物足りないさがあった",
     solution:
       "Next.js と Electron を組み合わせ、モダンな UI と快適な操作性を実現",
     outcome: "日常的に使える実用的なメモアプリを完成",
     features: [
-      "マークダウン対応のメモ編集",
+      "ドキュメント形式ではない新しい「メモ体験」",
       "ノートブック形式での整理",
-      "ダークモード対応",
+      "その時の思考を、そのまま",
+      "メモを知的財産に",
       "自動保存機能",
     ],
     decisions: [
@@ -78,18 +79,18 @@ export const works: Work[] = [
     title: "Portfolio Site",
     description: "このポートフォリオサイト",
     techStack: [
-      "Next.js 15",
+      "Next.js",
       "TypeScript",
       "Tailwind CSS",
       "shadcn/ui",
       "Framer Motion",
     ],
-    github: "https://github.com/iori-ringo/my-portfolio",
+    github: "https://github.com/iori-ringo/MyPortfolio",
     role: "個人開発",
     highlight: "モダンな UI/UX とインタラクティブなアニメーション",
     problem: "技術力と実務適性を短時間で伝えられるポートフォリオが必要だった",
     solution:
-      "Next.js 15 + shadcn/ui で高品質な UI を構築し、Framer Motion でインタラクティブな演出を追加",
+      "Next.js + shadcn/ui で高品質な UI を構築し、Framer Motion でインタラクティブな演出を追加",
     outcome: "30秒で得意領域・代表作・実務経験が理解できるサイトを構築",
     features: [
       "ライト/ダークモード切り替え",
@@ -116,9 +117,8 @@ export const works: Work[] = [
     ],
     challenges: [
       {
-        title: "ha-x.co 参考デザインの再現",
-        description:
-          "参考サイトのデザイン言語を分析し、ティールカラーでモダンな印象を実現",
+        title: "",
+        description: "",
       },
     ],
     improvements: [
@@ -155,13 +155,13 @@ export const highlights = [
 export const experiences = [
   {
     title: "フロントエンド開発",
-    period: "2024 - 現在",
+    period: "2025-05 ~ 現在",
     description:
       "React/Next.js を使用した Web アプリケーション開発。TypeScript による型安全な実装を心がけています。",
   },
   {
     title: "個人開発",
-    period: "2023 - 現在",
+    period: "2025-11 ~ 現在",
     description:
       "Electron + Next.js でデスクトップアプリを開発。AI ツールを活用した効率的な開発フローを確立。",
   },
