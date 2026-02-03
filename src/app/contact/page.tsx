@@ -1,4 +1,5 @@
-import { Github, Linkedin, Mail, Twitter } from "lucide-react";
+import { Mail } from "lucide-react";
+import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { Card, CardHeader, CardTitle } from "@/components/ui/card";
 import { Mascot } from "@/components/ui/mascot";
 import { contactLinks } from "@/data/contact";
@@ -9,10 +10,10 @@ export const metadata = pageMetadata.contact;
 
 // アイコンマッピング
 const iconMap = {
-  Github,
+  Github: FaGithub,
   Mail,
-  Linkedin,
-  Twitter,
+  Linkedin: FaLinkedin,
+  Twitter: FaTwitter,
 } as const;
 
 // profile.social からURLを取得するヘルパー関数
@@ -57,19 +58,19 @@ const ContactPage = () => {
             const Icon = iconMap[link.iconName];
             const url = getContactUrl(link.type);
             const description = getDescription(link.type, link.description);
+            // mailto リンクは target="_blank" を使用しない
+            const isEmail = link.type === "email";
 
             return (
-              <Card
+              <a
                 key={link.name}
-                className="hover:shadow-lg transition-shadow"
+                href={url}
+                target={isEmail ? undefined : "_blank"}
+                rel={isEmail ? undefined : "noopener noreferrer"}
+                className="block"
               >
-                <a
-                  href={url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block"
-                >
-                  <CardHeader className="flex flex-row items-center gap-4">
+                <Card className="hover:shadow-lg transition-shadow cursor-pointer">
+                  <CardHeader className="flex flex-row items-center gap-4 pointer-events-none">
                     <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
                       <Icon className="w-6 h-6 text-primary" />
                     </div>
@@ -80,8 +81,8 @@ const ContactPage = () => {
                       </p>
                     </div>
                   </CardHeader>
-                </a>
-              </Card>
+                </Card>
+              </a>
             );
           })}
         </div>

@@ -1,8 +1,9 @@
 import { FileText, Mail } from "lucide-react";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { Mascot } from "@/components/ui/mascot";
 import { paths } from "@/core/paths";
+import { cn } from "@/lib/utils";
 
 export const CtaSection = () => {
   return (
@@ -21,23 +22,23 @@ export const CtaSection = () => {
         <div className="flex flex-col md:flex-row items-center justify-center gap-8">
           {/* CTA Buttons: DOM順序通り左側(PC)・上側(SP)に配置 */}
           <div className="flex flex-wrap justify-center gap-4">
-            <Button asChild size="lg" className="rounded-full">
-              <Link href={paths.contact.getHref()}>
-                <Mail className="mr-2 h-5 w-5" />
-                Contact
-              </Link>
-            </Button>
-            <Button
-              asChild
-              variant="outline"
-              size="lg"
-              className="rounded-full"
+            <Link
+              href={paths.contact.getHref()}
+              className={cn(buttonVariants({ size: "lg" }), "rounded-full")}
             >
-              <Link href={paths.resume.getHref()}>
-                <FileText className="mr-2 h-5 w-5" />
-                Resume
-              </Link>
-            </Button>
+              <Mail className="mr-2 h-5 w-5" />
+              Contact
+            </Link>
+            <Link
+              href={paths.resume.getHref()}
+              className={cn(
+                buttonVariants({ variant: "outline", size: "lg" }),
+                "rounded-full",
+              )}
+            >
+              <FileText className="mr-2 h-5 w-5" />
+              Resume
+            </Link>
           </div>
           {/* マスコット（This - 指差し）: 右側(PC)・下側(SP)に配置 */}
           <Mascot

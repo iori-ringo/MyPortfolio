@@ -1,7 +1,8 @@
-import { ArrowRight, Github } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { FaGithub } from "react-icons/fa";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -11,6 +12,7 @@ import {
 } from "@/components/ui/card";
 import { paths } from "@/core/paths";
 import { works } from "@/data/works";
+import { cn } from "@/lib/utils";
 
 export const FeaturedWorksSection = () => {
   return (
@@ -48,23 +50,26 @@ export const FeaturedWorksSection = () => {
 
                 {/* アクション */}
                 <div className="flex gap-3 pt-2">
-                  <Button asChild variant="default" size="sm">
-                    <Link href={paths.works.detail.getHref(work.slug)}>
-                      詳細を見る
-                      <ArrowRight className="ml-1 h-4 w-4" />
-                    </Link>
-                  </Button>
+                  <Link
+                    href={paths.works.detail.getHref(work.slug)}
+                    className={buttonVariants({ size: "sm" })}
+                  >
+                    詳細を見る
+                    <ArrowRight className="ml-1 h-4 w-4" />
+                  </Link>
                   {work.github && (
-                    <Button asChild variant="outline" size="sm">
-                      <a
-                        href={work.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <Github className="mr-1 h-4 w-4" />
-                        GitHub
-                      </a>
-                    </Button>
+                    <a
+                      href={work.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={buttonVariants({
+                        variant: "outline",
+                        size: "sm",
+                      })}
+                    >
+                      <FaGithub className="mr-1 h-4 w-4" />
+                      GitHub
+                    </a>
                   )}
                 </div>
               </CardContent>
@@ -74,12 +79,13 @@ export const FeaturedWorksSection = () => {
 
         {/* もっと見るリンク */}
         <div className="text-center mt-10">
-          <Button asChild variant="ghost" size="lg">
-            <Link href={paths.works.getHref()}>
-              すべての作品を見る
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
-          </Button>
+          <Link
+            href={paths.works.getHref()}
+            className={buttonVariants({ variant: "ghost", size: "lg" })}
+          >
+            すべての作品を見る
+            <ArrowRight className="ml-2 h-5 w-5" />
+          </Link>
         </div>
       </div>
     </section>

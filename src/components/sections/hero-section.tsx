@@ -1,13 +1,15 @@
 "use client";
 
-import { FileText, Github } from "lucide-react";
+import { FileText } from "lucide-react";
 import Link from "next/link";
+import { FaGithub } from "react-icons/fa";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { Mascot } from "@/components/ui/mascot";
 import { Typewriter } from "@/components/ui/typewriter";
 import { paths } from "@/core/paths";
 import { profile } from "@/data/profile";
+import { cn } from "@/lib/utils";
 
 export const HeroSection = () => {
   return (
@@ -69,27 +71,25 @@ export const HeroSection = () => {
 
           {/* CTA ボタン */}
           <div className="flex flex-wrap justify-center gap-4">
-            <Button asChild size="lg" className="rounded-full">
-              <Link href={paths.works.getHref()}>
-                <FileText className="mr-2 h-5 w-5" />
-                Works
-              </Link>
-            </Button>
-            <Button
-              asChild
-              variant="outline"
-              size="lg"
-              className="rounded-full"
+            <Link
+              href={paths.works.getHref()}
+              className={cn(buttonVariants({ size: "lg" }), "rounded-full")}
             >
-              <a
-                href={profile.social.github}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Github className="mr-2 h-5 w-5" />
-                GitHub
-              </a>
-            </Button>
+              <FileText className="mr-2 h-5 w-5" />
+              Works
+            </Link>
+            <a
+              href={profile.social.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={cn(
+                buttonVariants({ variant: "outline", size: "lg" }),
+                "rounded-full",
+              )}
+            >
+              <FaGithub className="mr-2 h-5 w-5" />
+              GitHub
+            </a>
           </div>
 
           {/* マスコット（Good）: PC配置 右下 */}
