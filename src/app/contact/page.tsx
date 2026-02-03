@@ -60,7 +60,7 @@ const ContactPage = () => {
         {/* マスコットフッター */}
         <div className="flex justify-center mt-20">
           <Mascot
-            src="/images/mascot/this.png"
+            src="/images/mascot/this.webp"
             width={140}
             height={140}
             animation="wave"

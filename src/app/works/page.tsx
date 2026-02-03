@@ -16,7 +16,7 @@ const WorksPage = () => {
           </AnimatedTitle>
           {/* マスコット（Think） */}
           <Mascot
-            src="/images/mascot/think.png"
+            src="/images/mascot/think.webp"
             width={230}
             height={230}
             animation="float"

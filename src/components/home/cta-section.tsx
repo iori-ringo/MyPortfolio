@@ -42,7 +42,7 @@ export const CtaSection = () => {
           </div>
           {/* マスコット（This - 指差し）: 右側(PC)・下側(SP)に配置 */}
           <Mascot
-            src="/images/mascot/this.png"
+            src="/images/mascot/this.webp"
             width={150}
             height={150}
             animation="bounce"
