@@ -42,8 +42,7 @@ export const works: Work[] = [
     features: [
       "ドキュメント形式ではない新しい「メモ体験」",
       "ノートブック形式での整理",
-      "その時の思考を、そのまま",
-      "メモを知的財産に",
+      "ノートの好きな箇所に各メモを作成",
       "自動保存機能",
     ],
     decisions: [
@@ -70,6 +69,7 @@ export const works: Work[] = [
     ],
     improvements: [
       "クラウド同期機能の追加",
+      "ブラウザ版、モバイル版の実装",
       "タグ機能によるメモの分類",
       "エクスポート機能（PDF/Markdown）",
     ],
@@ -78,13 +78,7 @@ export const works: Work[] = [
     slug: "portfolio",
     title: "Portfolio Site",
     description: "このポートフォリオサイト",
-    techStack: [
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "shadcn/ui",
-      "Framer Motion",
-    ],
+    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "shadcn/ui"],
     github: "https://github.com/iori-ringo/MyPortfolio",
     role: "個人開発",
     highlight: "モダンな UI/UX とインタラクティブなアニメーション",
@@ -114,6 +108,11 @@ export const works: Work[] = [
         description:
           "作品やスキル情報をデータファイルに分離し、編集の容易さを確保",
       },
+      {
+        title: "動的メタデータ生成",
+        description:
+          "generateMetadata 関数により各作品ページで適切な SEO メタデータを自動生成し、検索エンジン最適化とSNSシェア対応を実現",
+      },
     ],
     challenges: [
       {
@@ -129,8 +128,25 @@ export const works: Work[] = [
   },
 ];
 
-// Highlights（強み3点）- モックデータ
 export const highlights = [
+  {
+    title: "長期インターンでの実務経験",
+    description:
+      "HAX株式会社での長期インターンにて、要件定義から実装まで一貫して携わり、商用レベルの開発を経験しています。",
+    icon: "Briefcase",
+  },
+  {
+    title: "作り手としてのプロ意識",
+    description:
+      "ものづくりのプロとして、お客様・利用者のことをお客様以上に、深く理解し、期待を超えるものを作り上げることに責任を持っています。",
+    icon: "UserCheck",
+  },
+  {
+    title: "責務分離を徹底したコンポーネント設計",
+    description:
+      "UI、ロジック、データ取得の責務を明確に分離し、デザインシステムに基づいた再利用性の高いコンポーネント開発を実践しています。",
+    icon: "Boxes",
+  },
   {
     title: "UI/UXへのこだわり",
     description:
@@ -140,29 +156,29 @@ export const highlights = [
   {
     title: "AI活用による開発効率化",
     description:
-      "ChatGPT, Cursor, Codex を活用し、設計・実装・レビューを高速化しています。",
+      "Claude Code, Cursor, Codex などを活用し、設計・実装・レビューを高速化しています。",
     icon: "Sparkles",
   },
   {
-    title: "型安全な設計",
+    title: "能動的な技術キャッチアップ",
     description:
-      "TypeScript と Zod を活用し、堅牢で保守性の高いコードを書いています。",
-    icon: "Shield",
+      "最新の技術動向を常に追い、目的（Why）に合わせた最適な技術選定と学習を継続しています。",
+    icon: "Zap",
   },
 ];
 
 // Experience（経験）- モックデータ
 export const experiences = [
   {
-    title: "フロントエンド開発",
+    title: "長期インターンシップ (HAX株式会社)",
     period: "2025-05 ~ 現在",
     description:
-      "React/Next.js を使用した Web アプリケーション開発。TypeScript による型安全な実装を心がけています。",
+      "フロントエンドエンジニアをメインとして、社内システムの開発や新規Webサービスの要件定義、画面設計、クライアント商談まで幅広く担当しています。",
   },
   {
     title: "個人開発",
     period: "2025-11 ~ 現在",
     description:
-      "Electron + Next.js でデスクトップアプリを開発。AI ツールを活用した効率的な開発フローを確立。",
+      "macOS用デスクトップメモアプリや、このポートフォリオサイトなどの制作しました。モダンな技術スタックを用いた開発を通じ、質の高いアウトプットを意識しています。",
   },
 ];
