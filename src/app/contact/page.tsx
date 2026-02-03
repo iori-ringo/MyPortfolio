@@ -70,7 +70,7 @@ const ContactPage = () => {
                 className="block"
               >
                 <Card className="hover:shadow-lg transition-shadow cursor-pointer">
-                  <CardHeader className="flex flex-row items-center gap-4 pointer-events-none">
+                  <CardHeader className="flex flex-row items-center gap-4">
                     <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
                       <Icon className="w-6 h-6 text-primary" />
                     </div>
