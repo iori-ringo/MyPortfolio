@@ -65,4 +65,4 @@ adapter.onMenuAction('new-note', () => createNote())
 
 ## ファイル場所
 
-`/Users/IORIK1001/coding/memo_app/KODAWARI.md`
+`/Users/IORIK1001/coding/MyPortfolio/KODAWARI.md`
