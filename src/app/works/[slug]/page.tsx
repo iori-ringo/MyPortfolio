@@ -1,6 +1,7 @@
-import { ArrowLeft, ExternalLink, Github } from "lucide-react";
+import { ArrowLeft, ExternalLink } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { FaGithub } from "react-icons/fa";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -73,7 +74,7 @@ const WorkDetailPage = async ({ params }: WorkDetailPageProps) => {
             {work.github && (
               <Button asChild>
                 <a href={work.github} target="_blank" rel="noopener noreferrer">
-                  <Github className="mr-2 h-4 w-4" />
+                  <FaGithub className="mr-2 h-4 w-4" />
                   GitHub
                 </a>
               </Button>

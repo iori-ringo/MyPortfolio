@@ -1,12 +1,10 @@
 import { AnimatedTitle } from "@/components/ui/animated-title";
 import { Mascot } from "@/components/ui/mascot";
 import { WorkCard } from "@/components/works/work-card";
+import { pageMetadata } from "@/data/metadata";
 import { works } from "@/data/works";
 
-export const metadata = {
-  title: "Works | 清宮 伊織",
-  description: "開発した作品一覧。設計判断、技術スタック、改善点を詳細に記載。",
-};
+export const metadata = pageMetadata.works;
 
 const WorksPage = () => {
   return (
