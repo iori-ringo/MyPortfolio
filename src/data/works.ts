@@ -34,37 +34,39 @@ export const works: Work[] = [
     techStack: ["Next.js", "Electron", "TypeScript", "Tailwind CSS", "Zustand"],
     github: "https://github.com/iori-ringo/memo_app",
     role: "個人開発",
-    highlight: "Electron × Next.js の統合開発",
+    highlight: "Apple標準メモの物足りなさを解消する、独自の思考整理ツール",
     problem: "Appleの標準のメモアプリでは物足りないさがあった",
     solution:
       "Next.js と Electron を組み合わせ、モダンな UI と快適な操作性を実現",
     outcome: "日常的に使える実用的なメモアプリを完成",
     features: [
       "ドキュメント形式ではない新しい「メモ体験」",
-      "ノートブック形式での整理",
-      "ノートの好きな箇所に各メモを作成",
-      "自動保存機能",
+      "書き手に意識させない、リアルタイム・オートセーブ機能",
+      "Zustand を活用した、複雑なメモ配置情報の高パフォーマンスな状態管理",
+      "徹底したアクセシビリティ設計（キーボード操作の最適化など）",
     ],
     decisions: [
       {
-        title: "状態管理に Zustand を採用",
+        title: "機能の追加や変更に強い、柔軟な設計構造",
         description:
-          "シンプルな API と TypeScript との親和性を重視し、Redux ではなく Zustand を選択",
+          "アプリの機能を独立した単位で管理する仕組みを採用。デスクトップ版とWeb版の共通化も考慮し、将来的な機能拡張がスムーズに行える土台を整えました。",
       },
       {
-        title: "Electron との IPC 通信設計",
-        description: "型安全な IPC 通信を実現するため、共通の型定義を設置",
+        title: "直感的な操作を妨げない、滑らかな動作の追求",
+        description:
+          "自由なキャンバス操作やショートカット入力の反応速度にこだわり、内部処理を最適化。ユーザーが思考を止めることなく、心地よく使い続けられる操作感を追求しました。",
       },
       {
-        title: "Feature-Based Architecture",
-        description: "機能ごとにフォルダを分割し、保守性と拡張性を向上",
+        title: "ミスのない開発と高い信頼性を支える共通基盤",
+        description:
+          "アプリ全体で扱う情報の定義を一元管理し、開発時の不具合を未然に防ぐ仕組みを構築。異なる実行環境間でも一貫性を保ち、安定した品質を維持できる設計にしました。",
       },
     ],
     challenges: [
       {
-        title: "Electron と Next.js の統合",
+        title: "複雑化する機能を支える、論理的な状態管理と責務分離",
         description:
-          "開発環境とプロダクション環境での動作の違いに苦労。プリロードスクリプトとコンテキストブリッジを適切に設定して解決",
+          "機能追加に伴い状態管理が複雑化し、バグの温床となるリスクがありました。機能ごとにロジックを Custom Hooks に完全に分離し、View（描画）を薄く保つアーキテクチャを徹底することで、見通しの良さと高い保守性を両立させました。",
       },
     ],
     improvements: [
