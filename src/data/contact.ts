@@ -1,6 +1,17 @@
 // Contact ページ用データ
 // 各連絡先リンクの情報を管理
 
+import { Mail } from "lucide-react";
+import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+
+// アイコンマッピング
+export const contactIcons = {
+  Github: FaGithub,
+  Mail,
+  Linkedin: FaLinkedin,
+  Twitter: FaTwitter,
+} as const;
+
 export type ContactLinkType = "github" | "email" | "linkedin" | "x";
 
 export type ContactLink = {

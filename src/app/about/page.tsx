@@ -1,6 +1,11 @@
+import { Badge } from "@/components/shadcn/badge";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "@/components/shadcn/card";
 import { AnimatedTitle } from "@/components/ui/animated-title";
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Mascot } from "@/components/ui/mascot";
 import { interests, values } from "@/data/about";
 import { pageMetadata } from "@/data/metadata";
@@ -18,7 +23,7 @@ const AboutPage = () => {
           <div className="flex flex-col md:flex-row justify-center items-center gap-8 mb-6">
             {/* マスコット（Hello）: 左側 (SPは上) */}
             <Mascot
-              src="/images/mascot/hello.png"
+              src="/images/mascot/hello.webp"
               width={250}
               height={250}
               animation="bounce"
@@ -67,7 +72,7 @@ const AboutPage = () => {
             <h2 className="text-2xl font-bold">Values</h2>
             {/* マスコット（Good） */}
             <Mascot
-              src="/images/mascot/good.png"
+              src="/images/mascot/good.webp"
               width={110}
               height={130}
               animation="pop"

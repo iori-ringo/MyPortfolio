@@ -57,7 +57,7 @@ export const BalloonBackground = () => {
     let balloons: Balloon[] = [];
     let particles: Particle[] = [];
     const mouse = { x: -2000, y: -2000 };
-    const balloonCount = 20;
+    const balloonCount = 30;
     let animationFrameId: number;
 
     // パーティクル作成関数
@@ -115,7 +115,7 @@ export const BalloonBackground = () => {
             : canvas.height + this.r + 200;
 
           this.colorSet = colors[Math.floor(Math.random() * colors.length)];
-          this.speed = Math.random() * 0.8 + 0.3;
+          this.speed = Math.random() + 0.3;
           this.wobbleSpeed = Math.random() * 0.02 + 0.01;
           this.angle = Math.random() * Math.PI * 2;
           this.popped = false;

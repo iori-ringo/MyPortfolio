@@ -1,4 +1,4 @@
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/shadcn/card";
 import { experiences } from "@/data/works";
 
 export const ExperienceSection = () => {

@@ -1,6 +1,6 @@
 import { FileText, Mail } from "lucide-react";
 import Link from "next/link";
-import { buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/shadcn/button";
 import { Mascot } from "@/components/ui/mascot";
 import { paths } from "@/core/paths";
 import { cn } from "@/lib/utils";
@@ -42,7 +42,7 @@ export const CtaSection = () => {
           </div>
           {/* マスコット（This - 指差し）: 右側(PC)・下側(SP)に配置 */}
           <Mascot
-            src="/images/mascot/this.png"
+            src="/images/mascot/this.webp"
             width={150}
             height={150}
             animation="bounce"

@@ -3,8 +3,8 @@
 import { FileText } from "lucide-react";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
-import { Badge } from "@/components/ui/badge";
-import { buttonVariants } from "@/components/ui/button";
+import { Badge } from "@/components/shadcn/badge";
+import { buttonVariants } from "@/components/shadcn/button";
 import { Mascot } from "@/components/ui/mascot";
 import { Typewriter } from "@/components/ui/typewriter";
 import { paths } from "@/core/paths";
@@ -19,7 +19,7 @@ export const HeroSection = () => {
         <div className="relative w-full max-w-2xl mx-auto">
           {/* マスコット（Hello）: PC配置 タイトルの左上 */}
           <Mascot
-            src="/images/mascot/mascot_cheer_black.png"
+            src="/images/mascot/mascot_cheer_black.webp"
             // サイズアップ: 220 -> 280
             width={300}
             height={300}
@@ -32,7 +32,7 @@ export const HeroSection = () => {
           {/* SP配置: 中央上部 */}
           <div className="md:hidden flex justify-center pb-4 mb-2">
             <Mascot
-              src="/images/mascot/mascot_cheer_black.png"
+              src="/images/mascot/mascot_cheer_black.webp"
               // SPサイズアップ: 160 -> 200
               width={200}
               height={200}
@@ -94,7 +94,7 @@ export const HeroSection = () => {
 
           {/* マスコット（Good）: PC配置 右下 */}
           <Mascot
-            src="/images/mascot/good.png"
+            src="/images/mascot/good.webp"
             // バランスを取るためこちらも少し大きくしても良いが、まずはHelloのみ要望通り大きくする。
             // ただし対角配置のバランスを考え、こちらも220 -> 260程度に微増させておく（Helloよりは控えめに）
             // ユーザー指示はHelloのみだが、全体のバランス配慮。
