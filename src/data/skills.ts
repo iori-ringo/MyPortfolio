@@ -37,7 +37,7 @@ export const skillCategories: SkillCategory[] = [
   },
   {
     name: "Tooling / DevOps",
-    skills: ["Git/GitHub", "ESLint/Prettier", "Biome", "Vercel"],
+    skills: ["Git/GitHub", "Biome", "Vercel"],
   },
   {
     name: "AI活用",
