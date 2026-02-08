@@ -20,6 +20,7 @@ interface MascotProps {
   containerClassName?: string; // コンテナへのクラス
   animation?: AnimationType;
   delay?: number;
+  priority?: boolean;
 }
 
 // アニメーション設定を取得する関数
@@ -89,13 +90,14 @@ const getAnimationConfig = (
 
 export const Mascot = ({
   src,
-  alt = "Mascot",
+  alt = "清宮伊織のマスコットキャラクター",
   width,
   height,
   className,
   containerClassName,
   animation = "none",
   delay = 0,
+  priority = false,
 }: MascotProps) => {
   const shouldReduceMotion = useReducedMotion();
   const animationConfig = getAnimationConfig(animation, delay);
@@ -118,7 +120,7 @@ export const Mascot = ({
         width={width}
         height={height}
         className={cn("drop-shadow-lg", className)}
-        priority
+        priority={priority}
       />
     </motion.div>
   );

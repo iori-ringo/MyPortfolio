@@ -1,4 +1,5 @@
 import { ArrowLeft, ExternalLink } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { FaGithub } from "react-icons/fa";
@@ -36,6 +37,7 @@ export const generateMetadata = async ({ params }: WorkDetailPageProps) => {
   return {
     title: `${work.title} | Works | 清宮 伊織`,
     description: work.description,
+    alternates: { canonical: `/works/${work.slug}` },
   };
 };
 
@@ -97,6 +99,37 @@ const WorkDetailPage = async ({ params }: WorkDetailPageProps) => {
               </Button>
             )}
           </div>
+
+          {/* スクリーンショット */}
+          {work.screenshots && work.screenshots.length > 0 ? (
+            <div className="mt-8 grid grid-cols-2 gap-4">
+              {work.screenshots.map((src, index) => (
+                <div key={src} className="overflow-hidden rounded-xl border">
+                  <Image
+                    src={src}
+                    alt={`${work.title}のスクリーンショット ${index + 1}`}
+                    width={600}
+                    height={338}
+                    className="w-full h-auto"
+                    priority={index === 0}
+                  />
+                </div>
+              ))}
+            </div>
+          ) : (
+            work.thumbnail && (
+              <div className="mt-8 overflow-hidden rounded-xl border">
+                <Image
+                  src={work.thumbnail}
+                  alt={`${work.title}のスクリーンショット`}
+                  width={1200}
+                  height={675}
+                  className="w-full h-auto"
+                  priority
+                />
+              </div>
+            )
+          )}
         </header>
 
         {/* 概要セクション */}

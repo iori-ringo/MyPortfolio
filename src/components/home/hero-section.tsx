@@ -20,6 +20,7 @@ export const HeroSection = () => {
           {/* マスコット（Hello）: PC配置 タイトルの左上 */}
           <Mascot
             src="/images/mascot/mascot_cheer_black.webp"
+            alt="応援する清宮伊織のマスコットキャラクター"
             // サイズアップ: 220 -> 280
             width={300}
             height={300}
@@ -27,16 +28,19 @@ export const HeroSection = () => {
             containerClassName="absolute -top-32 -left-10 md:-top-40 md:-left-30 rotate-12 z-20 hidden md:block pointer-events-none select-none"
             animation="wave"
             delay={0.5}
+            priority
           />
 
           {/* SP配置: 中央上部 */}
           <div className="md:hidden flex justify-center pb-4 mb-2">
             <Mascot
               src="/images/mascot/mascot_cheer_black.webp"
+              alt="応援する清宮伊織のマスコットキャラクター"
               // SPサイズアップ: 160 -> 200
               width={200}
               height={200}
               animation="wave"
+              priority
             />
           </div>
 
@@ -95,6 +99,7 @@ export const HeroSection = () => {
           {/* マスコット（Good）: PC配置 右下 */}
           <Mascot
             src="/images/mascot/good.webp"
+            alt="グッドサインをする清宮伊織のマスコットキャラクター"
             // バランスを取るためこちらも少し大きくしても良いが、まずはHelloのみ要望通り大きくする。
             // ただし対角配置のバランスを考え、こちらも220 -> 260程度に微増させておく（Helloよりは控えめに）
             // ユーザー指示はHelloのみだが、全体のバランス配慮。

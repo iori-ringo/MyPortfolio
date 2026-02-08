@@ -30,6 +30,7 @@ const AboutPage = () => {
           <div className="flex flex-col md:flex-row justify-center items-center gap-8 mb-8">
             <Mascot
               src="/images/mascot/hello.webp"
+              alt="挨拶する清宮伊織のマスコットキャラクター"
               width={300}
               height={300}
               animation="bounce"
@@ -121,6 +122,7 @@ const AboutPage = () => {
             <SectionTitle className="mb-0">Values</SectionTitle>
             <Mascot
               src="/images/mascot/good.webp"
+              alt="グッドサインをする清宮伊織のマスコットキャラクター"
               width={80}
               height={80}
               animation="pop"

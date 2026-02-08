@@ -1,7 +1,7 @@
 // スキルデータ（カテゴリ別）
 // 後から編集しやすいようにデータを分離
 
-export type SkillCategory = {
+type SkillCategory = {
   name: string;
   skills: string[];
 };
@@ -37,7 +37,7 @@ export const skillCategories: SkillCategory[] = [
   },
   {
     name: "Tooling / DevOps",
-    skills: ["Git/GitHub", "ESLint/Prettier", "Biome", "Vercel"],
+    skills: ["Git/GitHub", "Biome", "Vercel"],
   },
   {
     name: "AI活用",

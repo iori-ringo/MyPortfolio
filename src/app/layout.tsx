@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { Inter, Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
+import { PersonJsonLd } from "@/components/json-ld";
 import { Navigation } from "@/components/navigation";
 import { BalloonBackground } from "@/components/ui/balloon-background";
+import { siteConfig } from "@/core/site-config";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -16,18 +18,24 @@ const notoSansJP = Noto_Sans_JP({
 });
 
 export const metadata: Metadata = {
-  title: "清宮 伊織 | Frontend Engineer",
-  description:
-    "フロントエンド開発と体験設計を武器に、迷いなく使えるUIと納得感ある体験を積み重ね、世界中のユーザーに届くサービスで人と人をつなぎます。",
+  metadataBase: new URL(siteConfig.url),
+  title: siteConfig.name,
+  description: siteConfig.description,
   icons: {
     icon: "/icon.png",
     apple: "/icon.png",
   },
   openGraph: {
-    title: "清宮 伊織 | Frontend Engineer",
-    description:
-      "フロントエンド開発と体験設計を武器に、迷いなく使えるUIと納得感ある体験を積み重ね、世界中のユーザーに届くサービスで人と人をつなぎます。",
+    title: siteConfig.name,
+    description: siteConfig.description,
     type: "website",
+    images: [{ url: "/og-image.png", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.name,
+    description: siteConfig.description,
+    images: ["/og-image.png"],
   },
 };
 
@@ -41,6 +49,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${notoSansJP.variable} font-sans antialiased`}
       >
+        <PersonJsonLd />
         <BalloonBackground />
         <Navigation />
         <main className="relative z-10">{children}</main>

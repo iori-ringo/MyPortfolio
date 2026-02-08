@@ -5,6 +5,8 @@ export type Work = {
   slug: string;
   title: string;
   description: string;
+  thumbnail?: string;
+  screenshots?: string[];
   techStack: string[];
   github?: string;
   demoUrl?: string;
@@ -31,6 +33,8 @@ export const works: Work[] = [
     slug: "memo-app",
     title: "Memo App",
     description: "macOS用デスクトップメモアプリ",
+    thumbnail: "/images/works/memo-app.png",
+    screenshots: ["/images/works/memo-app.png", "/images/works/memo-app-2.png"],
     techStack: ["Next.js", "Electron", "TypeScript", "Tailwind CSS", "Zustand"],
     github: "https://github.com/iori-ringo/memo_app",
     role: "個人開発",
@@ -80,6 +84,8 @@ export const works: Work[] = [
     slug: "portfolio",
     title: "Portfolio Site",
     description: "このポートフォリオサイト",
+    thumbnail: "/images/works/portfolio.png",
+    screenshots: ["/images/works/portfolio.png", "/images/works/portfolio-2.png"],
     techStack: ["Next.js", "TypeScript", "Tailwind CSS", "shadcn/ui"],
     github: "https://github.com/iori-ringo/MyPortfolio",
     role: "個人開発",
@@ -114,6 +120,22 @@ export const works: Work[] = [
       },
     ],
     improvements: ["ブログ機能の追加", "多言語対応（英語版）"],
+  },
+];
+
+// Experience（経験）- モックデータ
+export const experiences = [
+  {
+    title: "長期インターンシップ (HAX株式会社)",
+    period: "2025-05 ~ 現在",
+    description:
+      "フロントエンドエンジニアをメインとして、社内システムの開発や新規Webサービスの要件定義、画面設計、クライアント商談まで幅広く担当しています。",
+  },
+  {
+    title: "個人開発",
+    period: "2025-11 ~ 現在",
+    description:
+      "macOS用デスクトップメモアプリや、このポートフォリオサイトなどの制作しました。モダンな技術スタックを用いた開発を通じ、質の高いアウトプットを意識しています。",
   },
 ];
 
@@ -156,18 +178,3 @@ export const highlights = [
   },
 ];
 
-// Experience（経験）- モックデータ
-export const experiences = [
-  {
-    title: "長期インターンシップ (HAX株式会社)",
-    period: "2025-05 ~ 現在",
-    description:
-      "フロントエンドエンジニアをメインとして、社内システムの開発や新規Webサービスの要件定義、画面設計、クライアント商談まで幅広く担当しています。",
-  },
-  {
-    title: "個人開発",
-    period: "2025-11 ~ 現在",
-    description:
-      "macOS用デスクトップメモアプリや、このポートフォリオサイトなどの制作しました。モダンな技術スタックを用いた開発を通じ、質の高いアウトプットを意識しています。",
-  },
-];

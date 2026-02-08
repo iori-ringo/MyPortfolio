@@ -43,6 +43,7 @@ export const CtaSection = () => {
           {/* マスコット（This - 指差し）: 右側(PC)・下側(SP)に配置 */}
           <Mascot
             src="/images/mascot/this.webp"
+            alt="指差しする清宮伊織のマスコットキャラクター"
             width={150}
             height={150}
             animation="bounce"

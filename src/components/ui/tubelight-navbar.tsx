@@ -22,7 +22,8 @@ export const NavBar = ({ items, className }: NavBarProps) => {
   const pathname = usePathname();
 
   return (
-    <div
+    <nav
+      aria-label="メインナビゲーション"
       className={cn(
         "fixed bottom-0 sm:bottom-auto sm:top-0 left-1/2 -translate-x-1/2 z-50 mb-6 sm:mb-0 sm:pt-6",
         className,
@@ -73,6 +74,6 @@ export const NavBar = ({ items, className }: NavBarProps) => {
           );
         })}
       </div>
-    </div>
+    </nav>
   );
 };
