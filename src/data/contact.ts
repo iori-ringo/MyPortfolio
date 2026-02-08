@@ -14,7 +14,7 @@ export const contactIcons = {
 
 export type ContactLinkType = "github" | "email" | "linkedin" | "x";
 
-export type ContactLink = {
+type ContactLink = {
   name: string;
   type: ContactLinkType;
   description: string;

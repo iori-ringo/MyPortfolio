@@ -61,6 +61,7 @@ const ContactPage = () => {
         <div className="flex justify-center mt-20">
           <Mascot
             src="/images/mascot/this.webp"
+            alt="指差しする清宮伊織のマスコットキャラクター"
             width={140}
             height={140}
             animation="wave"

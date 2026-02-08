@@ -1,3 +1,4 @@
+import { WorksCollectionJsonLd } from "@/components/json-ld";
 import { AnimatedTitle } from "@/components/ui/animated-title";
 import { Mascot } from "@/components/ui/mascot";
 import { WorkCard } from "@/components/works/work-card";
@@ -9,6 +10,7 @@ export const metadata = pageMetadata.works;
 const WorksPage = () => {
   return (
     <div className="min-h-screen pt-24 pb-20">
+      <WorksCollectionJsonLd works={works} />
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-center items-center gap-4 mb-6">
           <AnimatedTitle className="text-4xl md:text-5xl font-bold text-center order-2 md:order-1">
@@ -17,6 +19,7 @@ const WorksPage = () => {
           {/* マスコット（Think） */}
           <Mascot
             src="/images/mascot/think.webp"
+            alt="考える清宮伊織のマスコットキャラクター"
             width={230}
             height={230}
             animation="float"
@@ -27,11 +30,13 @@ const WorksPage = () => {
           これまでに開発した作品です。設計判断や技術的な詳細を記載しています。
         </p>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          {works.map((work) => (
-            <WorkCard key={work.slug} work={work} />
-          ))}
-        </div>
+        <section aria-label="作品一覧">
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {works.map((work) => (
+              <WorkCard key={work.slug} work={work} />
+            ))}
+          </div>
+        </section>
       </div>
     </div>
   );

@@ -1,18 +1,17 @@
 // About ページ用データ
 // Values, Strengths, Experiences, Educations, Hobbies, Skills, Interests を管理
 
-export type Value = {
+type Value = {
   title: string;
   description: string;
 };
 
-export type Strength = {
+type Strength = {
   title: string;
   description: string;
-  icon?: string;
 };
 
-export type Experience = {
+type Experience = {
   title: string;
   period?: string;
   role: string;
@@ -20,14 +19,13 @@ export type Experience = {
   techStack?: string[];
 };
 
-export type Education = {
+type Education = {
   school: string;
   faculty: string;
   description: string;
-  grade?: string;
 };
 
-export type Hobby = {
+type Hobby = {
   title: string;
   description: string;
 };

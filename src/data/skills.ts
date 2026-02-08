@@ -1,7 +1,7 @@
 // スキルデータ（カテゴリ別）
 // 後から編集しやすいようにデータを分離
 
-export type SkillCategory = {
+type SkillCategory = {
   name: string;
   skills: string[];
 };
